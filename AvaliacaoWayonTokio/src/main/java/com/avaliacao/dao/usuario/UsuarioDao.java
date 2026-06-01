@@ -6,4 +6,6 @@ public interface UsuarioDao {
 
 	Usuario findByEmail(String email);
 	
+	void save(Usuario usuario);
+	
 }

@@ -6,4 +6,6 @@ public interface ContaDao {
 
 	Conta findByNumeroConta(String numeroConta);
 	
+	void save(Conta conta);
+	
 }

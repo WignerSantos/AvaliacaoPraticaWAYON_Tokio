@@ -36,4 +36,9 @@ public class UsuarioDaoImpl implements UsuarioDao {
 		return usuarios.isEmpty() ? null : usuarios.get(0);
 	}
 
+	@Override
+	public void save(Usuario usuario) {
+		entityManager.persist(usuario);
+	}
+
 }

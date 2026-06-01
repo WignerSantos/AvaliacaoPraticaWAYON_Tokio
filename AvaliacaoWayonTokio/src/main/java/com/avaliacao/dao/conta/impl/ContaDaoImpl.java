@@ -36,4 +36,9 @@ public class ContaDaoImpl implements ContaDao {
 		return conta.isEmpty() ? null : conta.get(0);
 	}
 
+	@Override
+	public void save(Conta conta) {
+		entityManager.persist(conta);
+	}
+
 }
