@@ -1,4 +1,4 @@
-package com.avaliacao.authservice;
+package com.avaliacao.manager.auth.impl;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -11,12 +11,13 @@ import com.avaliacao.dao.conta.ContaDao;
 import com.avaliacao.dao.usuario.UsuarioDao;
 import com.avaliacao.dto.CadastroDTO;
 import com.avaliacao.exceptions.BusinessException;
+import com.avaliacao.manager.auth.AuthManager;
 import com.avaliacao.model.Conta;
 import com.avaliacao.model.Usuario;
 
 @Service
 @Transactional
-public class AuthService {
+public class AuthManagerImpl implements AuthManager {
 
 	@Autowired
 	private UsuarioDao usuarioDao;
@@ -37,7 +38,7 @@ public class AuthService {
 		usuarioNovo.setNome(dto.getNome());
 		usuarioNovo.setEmail(dto.getEmail());
 		usuarioNovo.setSenha(dto.getSenha());
-		usuarioDao.save(usuario);
+		usuarioDao.save(usuarioNovo);
 
 		Conta conta = new Conta();
 
